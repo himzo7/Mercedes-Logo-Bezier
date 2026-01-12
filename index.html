@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="sl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mercedes-Benz Replica</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <div class="logo-title">Mercedes‑Benz</div>
+    <nav>
+      <ul>
+        <li><a href="#">Vehicles</a></li>
+        <li><a href="#">Design</a></li>
+        <li><a href="#">Innovation</a></li>
+        <li><a href="#">Company</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Welcome to the Mercedes‑Benz Replica</h1>
+    <p>Eleganca. Inženiring. Ikona.</p>
+  </section>
+
+  <section class="logos-section">
+    <h2>Primerjava treh logotipov</h2>
+
+    <div class="logos-row">
+
+      <div class="logo-block">
+        <h3>Canvas logotip</h3>
+        <canvas id="canvas" width="350" height="350"></canvas>
+      </div>
+
+      <div class="logo-block">
+        <h3>PNG logotip</h3>
+        <img src="mercedes-benz-logo-free-vector.png" class="logo-img">
+      </div>
+
+      <div class="logo-block">
+        <h3>SVG logotip</h3>
+        <svg width="500" height="500" viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg" class="logo-img">
+          <g transform="translate(155.5,5.5) scale(0.5)">
+            <path d="M489.39,177.15 C658.26,170.76 819.34,324.04 802.99,518.39 C781.96,712.64 615.90,806.59 485.44,803.84 C283.44,795.36 150.46,622.18 180.17,444.61 C205.33,276.19 347.03,177.56 489.39,177.15 Z" fill="black" stroke="black" stroke-width="8"/>
+            <path d="M749.03,634.06 C749.03,634.06 533.02,465.99 533.02,465.99 C533.01,465.99 494.03,194.94 494.03,194.94 C746.26,203.63 846.72,464.97 749.04,634.06 Z M745.01,641.02 C634.12,830.56 354.92,840.61 236.03,642.04 C236.06,641.99 490.45,538.00 490.45,538.00 C490.45,538.01 745.01,641.01 745.01,641.01 Z M231.96,635.97 C231.96,635.97 446.58,462.63 446.58,462.63 C446.58,462.63 486.00,195.00 486.00,195.00 C388.87,194.28 288.72,248.55 236.33,338.44 C170.00,442.01 191.32,575.29 231.96,635.97 Z" fill="white"/>
+          </g>
+        </svg>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    © 2026 Mercedes‑Benz Replica
+  </footer>
+
+  <script>
+    window.onload = function() {
+      var canvas = document.getElementById("canvas");
+      var ctx = canvas.getContext("2d");
+
+      ctx.save();
+
+      // 🔥 Popolna poravnava brez spreminjanja debeline črte
+      ctx.translate(-20, -20);
+      ctx.scale(0.42, 0.42);
+
+      ctx.lineWidth = 8;
+
+      // KROG
+      ctx.beginPath();
+      ctx.moveTo(489.39,177.15);
+      ctx.bezierCurveTo(658.26,170.76, 819.34,324.04, 802.99,518.39);
+      ctx.bezierCurveTo(781.96,712.64, 615.90,806.59, 485.44,803.84);
+      ctx.bezierCurveTo(283.44,795.36, 150.46,622.18, 180.17,444.61);
+      ctx.bezierCurveTo(205.33,276.19, 347.03,177.56, 489.39,177.15);
+      ctx.closePath();
+      ctx.fillStyle = "black";
+      ctx.fill();
+      ctx.stroke();
+
+      // ZVEZDA
+      ctx.beginPath();
+      ctx.moveTo(749.03,634.06);
+      ctx.bezierCurveTo(749.03,634.06, 533.02,465.99, 533.02,465.99);
+      ctx.bezierCurveTo(533.01,465.99, 494.03,194.94, 494.03,194.94);
+      ctx.bezierCurveTo(746.26,203.63, 846.72,464.97, 749.04,634.06);
+      ctx.closePath();
+
+      ctx.moveTo(745.01,641.02);
+      ctx.bezierCurveTo(634.12,830.56, 354.92,840.61, 236.03,642.04);
+      ctx.bezierCurveTo(236.06,641.99, 490.45,538.00, 490.45,538.00);
+      ctx.bezierCurveTo(490.45,538.01, 745.01,641.01, 745.01,641.01);
+      ctx.closePath();
+
+      ctx.moveTo(231.96,635.97);
+      ctx.bezierCurveTo(231.96,635.97, 446.58,462.63, 446.58,462.63);
+      ctx.bezierCurveTo(446.58,462.63, 486.00,195.00, 486.00,195.00);
+      ctx.bezierCurveTo(388.87,194.28, 288.72,248.55, 236.33,338.44);
+      ctx.bezierCurveTo(170.00,442.01, 191.32,575.29, 231.96,635.97);
+      ctx.closePath();
+
+      ctx.fillStyle = "white";
+      ctx.fill();
+
+      ctx.restore();
+    };
+  </script>
+
+</body>
+</html>
