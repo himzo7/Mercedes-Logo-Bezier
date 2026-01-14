@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="sl">
+<head>
+<meta charset="UTF-8">
+<title>Mercedes logo – SVG vs Canvas vs PNG</title>
+
+<link rel="stylesheet" href="styles/style.css">
+
+</head>
+
+<body>
+
+<div class="wrapper">
+
+  <!-- SVG -->
+  <div class="box">
+    <h3>SVG</h3>
+    <svg xmlns="http://www.w3.org/2000/svg"
+         width="400" height="400"
+         viewBox="0 0 980 980">
+
+      <path
+        fill="black"
+        fill-rule="evenodd"
+        stroke="black"
+        stroke-width="1"
+        d="M 489.39,177.15
+           C 658.26,170.76 819.34,324.04 802.99,518.39
+             781.96,712.64 617.20,806.95 486.74,804.20
+             284.75,795.72 150.46,622.18 180.17,444.61
+             205.33,276.19 347.03,177.56 489.39,177.15 Z
+           M 749.03,634.06
+           C 749.03,634.06 533.02,465.99 533.02,465.99
+             533.02,465.99 533.01,465.99 533.01,465.99
+             533.01,465.99 495.00,195.03 495.00,195.03
+             495.00,195.03 495.00,195.01 495.00,195.01
+             747.10,206.39 846.72,464.97 749.04,634.06 Z
+           M 745.01,641.02
+           C 645.15,817.83 365.52,854.05 236.03,642.04
+             236.03,642.04 236.06,641.99 236.06,641.99
+             236.06,641.99 490.45,538.00 490.45,538.00
+             490.45,538.00 490.45,538.01 490.45,538.01
+             490.45,538.01 745.01,641.01 745.01,641.01 Z
+           M 232.98,635.98
+           C 232.98,635.98 446.58,462.63 446.58,462.63
+             446.58,462.63 485.95,194.98 485.95,194.98
+             388.82,194.26 288.72,248.55 236.33,338.44
+             170.00,442.01 192.34,575.29 232.98,635.98 Z" />
+    </svg>
+  </div>
+
+  <!-- CANVAS -->
+  <div class="box">
+    <h3>Canvas (Bezier)</h3>
+    <canvas id="c" width="400" height="400"></canvas>
+  </div>
+
+  <!-- PNG SLIKA -->
+  <div class="box">
+    <h3>PNG</h3>
+    <img src="images/mercedes-benz-logo-free-vector.png" alt="Mercedes logo PNG">
+  </div>
+
+</div>
+
+<script>
+const canvas = document.getElementById("c");
+const ctx = canvas.getContext("2d");
+
+ctx.scale(400 / 980, 400 / 980);
+ctx.beginPath();
+
+/* KROG */
+ctx.moveTo(489.39, 177.15);
+ctx.bezierCurveTo(658.26, 170.76, 819.34, 324.04, 802.99, 518.39);
+ctx.bezierCurveTo(781.96, 712.64, 617.20, 806.95, 486.74, 804.20);
+ctx.bezierCurveTo(284.75, 795.72, 150.46, 622.18, 180.17, 444.61);
+ctx.bezierCurveTo(205.33, 276.19, 347.03, 177.56, 489.39, 177.15);
+ctx.closePath();
+
+/* DESNI KRAK*/
+ctx.moveTo(749.03, 634.06);
+ctx.lineTo(533.02, 465.99);
+ctx.lineTo(495.00, 195.01);
+ctx.bezierCurveTo(747.10, 206.39, 846.72, 464.97, 749.04, 634.06);
+ctx.closePath();
+
+/*SPODNJI KRAK */
+ctx.moveTo(745.01, 641.02);
+ctx.bezierCurveTo(645.15, 817.83, 365.52, 854.05, 236.03, 642.04);
+ctx.lineTo(490.45, 538.00);
+ctx.lineTo(745.01, 641.01);
+ctx.closePath();
+
+/* LEVi KRAK*/
+ctx.moveTo(232.98, 635.98);
+ctx.lineTo(446.58, 462.63);
+ctx.lineTo(485.95, 194.98);
+ctx.bezierCurveTo(388.82, 194.26, 288.72, 248.55, 236.33, 338.44);
+ctx.bezierCurveTo(170.00, 442.01, 192.34, 575.29, 232.98, 635.98);
+ctx.closePath();
+
+ctx.fillStyle = "black";
+ctx.strokeStyle = "black";
+ctx.fill("evenodd");
+ctx.stroke();
+</script>
+
+</body>
+</html>
