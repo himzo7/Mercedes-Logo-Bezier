@@ -1,113 +1,175 @@
 <!DOCTYPE html>
-<html lang="sl">
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Mercedes logo – SVG vs Canvas vs PNG</title>
-
-<link rel="stylesheet" href="styles/style.css">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mercedes-Benz | Digital Craftsmanship</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="icon" href="images/mercedes_black.png">
+    <link rel="stylesheet" href="styles/style.css">
 </head>
-
 <body>
 
-<h1>Primerjava logotipov</h1>
-  
-<div class="wrapper">
+    <div id="school-warning-modal" class="warning-overlay">
+        <div class="warning-box">
+            <div class="warning-header">
+                ⚠️ OFFICIAL WARNING: SCHOOL PROJECT ⚠️
+            </div>
+            <div class="warning-content">
+                <h2>ACADEMIC PURPOSES ONLY</h2>
+                
+                <p>This website is a student project created for <strong>educational purposes</strong> as part of a web development class.</p>
+                
+                <div class="warning-alert">
+                    <p>NOT AFFILIATED WITH MERCEDES-BENZ</p>
+                    <p>This is a non-commercial static front-end demo.</p>
+                </div>
 
-  <!-- SVG -->
-  <div class="box">
-    <h3>SVG</h3>
-    <svg xmlns="http://www.w3.org/2000/svg"
-         width="400" height="400"
-         viewBox="0 0 980 980">
+                <p class="small-print">All trademarks, logos, and brand names are the property of their respective owners. No real data is collected or processed.</p>
+                
+                <button id="accept-warning-btn">I UNDERSTAND AND AGREE</button>
+            </div>
+        </div>
+    </div>
+    
+    <header class="hero">
+        <a href="https://www.mercedes-benz.com/en/" target="_blank" class="top-logo-link" title="Visit Mercedes-Benz Slovenia">
+            <svg viewBox="0 0 980 980"> 
+                <path fill="white" fill-rule="evenodd" d="M 489.39,177.15 C 658.26,170.76 819.34,324.04 802.99,518.39 781.96,712.64 617.20,806.95 486.74,804.20 284.75,795.72 150.46,622.18 180.17,444.61 205.33,276.19 347.03,177.56 489.39,177.15 Z M 749.03,634.06 C 749.03,634.06 533.02,465.99 533.02,465.99 533.02,465.99 533.01,465.99 533.01,465.99 533.01,465.99 495.00,195.03 495.00,195.03 495.00,195.03 495.00,195.01 495.00,195.01 747.10,206.39 846.72,464.97 749.04,634.06 Z M 745.01,641.02 C 645.15,817.83 365.52,854.05 236.03,642.04 236.03,642.04 236.06,641.99 236.06,641.99 236.06,641.99 490.45,538.00 490.45,538.00 490.45,538.00 490.45,538.01 490.45,538.01 490.45,538.01 745.01,641.01 745.01,641.01 Z M 232.98,635.98 C 232.98,635.98 446.58,462.63 446.58,462.63 446.58,462.63 485.95,194.98 485.95,194.98 388.82,194.26 288.72,248.55 236.33,338.44 170.00,442.01 192.34,575.29 232.98,635.98 Z" />
+            </svg>
+        </a>
 
-      <path
-        fill="black"
-        fill-rule="evenodd"
-        stroke="black"
-        stroke-width="1"
-        d="M 489.39,177.15
-           C 658.26,170.76 819.34,324.04 802.99,518.39
-             781.96,712.64 617.20,806.95 486.74,804.20
-             284.75,795.72 150.46,622.18 180.17,444.61
-             205.33,276.19 347.03,177.56 489.39,177.15 Z
-           M 749.03,634.06
-           C 749.03,634.06 533.02,465.99 533.02,465.99
-             533.02,465.99 533.01,465.99 533.01,465.99
-             533.01,465.99 495.00,195.03 495.00,195.03
-             495.00,195.03 495.00,195.01 495.00,195.01
-             747.10,206.39 846.72,464.97 749.04,634.06 Z
-           M 745.01,641.02
-           C 645.15,817.83 365.52,854.05 236.03,642.04
-             236.03,642.04 236.06,641.99 236.06,641.99
-             236.06,641.99 490.45,538.00 490.45,538.00
-             490.45,538.00 490.45,538.01 490.45,538.01
-             490.45,538.01 745.01,641.01 745.01,641.01 Z
-           M 232.98,635.98
-           C 232.98,635.98 446.58,462.63 446.58,462.63
-             446.58,462.63 485.95,194.98 485.95,194.98
-             388.82,194.26 288.72,248.55 236.33,338.44
-             170.00,442.01 192.34,575.29 232.98,635.98 Z" />
-    </svg>
-  </div>
+        <h1>Mercedes-Benz</h1>
+        <p>The Best or Nothing.</p>
+    </header>
 
-  <!-- CANVAS -->
-  <div class="box">
-    <h3>Canvas (Bezier)</h3>
-    <canvas id="c" width="400" height="400"></canvas>
-  </div>
+    <section class="section-padding reveal">
+        <div class="text-center">
+            <h2>Rendering Technologies</h2>
+            <p>Three distinct methods to display our identity on the digital stage.</p>
+        </div>
 
-  <!-- PNG SLIKA -->
-  <div class="box">
-    <h3>PNG</h3>
-    <img src="images/mercedes-benz-logo-free-vector.png" alt="Mercedes logo PNG">
-  </div>
+        <div class="grid-3">
+            <div class="tech-card">
+                <div class="visual-stage">
+                    <svg class="svg-preview" width="200" height="200" viewBox="0 0 980 980"> 
+                        <path fill="white" fill-rule="evenodd" d="M 489.39,177.15 C 658.26,170.76 819.34,324.04 802.99,518.39 781.96,712.64 617.20,806.95 486.74,804.20 284.75,795.72 150.46,622.18 180.17,444.61 205.33,276.19 347.03,177.56 489.39,177.15 Z M 749.03,634.06 C 749.03,634.06 533.02,465.99 533.02,465.99 533.02,465.99 533.01,465.99 533.01,465.99 533.01,465.99 495.00,195.03 495.00,195.03 495.00,195.03 495.00,195.01 495.00,195.01 747.10,206.39 846.72,464.97 749.04,634.06 Z M 745.01,641.02 C 645.15,817.83 365.52,854.05 236.03,642.04 236.03,642.04 236.06,641.99 236.06,641.99 236.06,641.99 490.45,538.00 490.45,538.00 490.45,538.00 490.45,538.01 490.45,538.01 490.45,538.01 745.01,641.01 745.01,641.01 Z M 232.98,635.98 C 232.98,635.98 446.58,462.63 446.58,462.63 446.58,462.63 485.95,194.98 485.95,194.98 388.82,194.26 288.72,248.55 236.33,338.44 170.00,442.01 192.34,575.29 232.98,635.98 Z" />
+                    </svg>
+                </div>
+                <h3>SVG Vector</h3>
+                <p>Resolution independent. Perfect mathematics defined by XML.</p>
+                
+                <button class="show-code-btn" onclick="toggleCode(this)">Show full SVG code</button>
+                <div class="code-reveal">
+<pre>
+<span class="tag">&lt;svg</span> <span class="attr">viewBox</span>=<span class="str">"0 0 980 980"</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;path</span> <span class="attr">d</span>=<span class="str">"M 489.39,177.15..."</span> <span class="tag">/&gt;</span>
+<span class="tag">&lt;/svg&gt;</span>
+</pre>
+                </div>
+            </div>
 
-</div>
+            <div class="tech-card">
+                <div class="visual-stage">
+                    <canvas id="mercedesCanvas" width="200" height="200"></canvas> 
+                </div>
+                <h3>HTML5 Canvas</h3>
+                <p>Programmatic rendering via JavaScript Bezier curves.</p>
 
-<script>
-const canvas = document.getElementById("c");
-const ctx = canvas.getContext("2d");
+                <button class="show-code-btn" onclick="toggleCode(this)">Show Canvas JS code</button>
+                <div class="code-reveal">
+<pre>
+<span class="kw">const</span> ctx = canvas.<span class="fn">getContext</span>(<span class="num">"2d"</span>);
+ctx.<span class="fn">beginPath</span>();
+ctx.<span class="fn">moveTo</span>(<span class="num">745.01</span>, <span class="num">641.02</span>);
+ctx.<span class="fn">bezierCurveTo</span>(
+  <span class="num">645.15</span>, <span class="num">817.83</span>, 
+  <span class="num">365.52</span>, <span class="num">854.05</span>, 
+  <span class="num">236.03</span>, <span class="num">642.04</span>
+);
+ctx.<span class="fn">stroke</span>();
+</pre>
+                </div>
+            </div>
 
-ctx.scale(400 / 980, 400 / 980);
-ctx.beginPath();
+            <div class="tech-card">
+                <div class="visual-stage">
+                    <img src="images/mercedes.png" alt="Mercedes Raster PNG" style="width: 200px; height: auto;"> 
+                </div>
+                <h3>PNG Raster</h3>
+                <p>Fixed pixel grid using an image file. Susceptible to aliasing.</p>
 
-/* KROG */
-ctx.moveTo(489.39, 177.15);
-ctx.bezierCurveTo(658.26, 170.76, 819.34, 324.04, 802.99, 518.39);
-ctx.bezierCurveTo(781.96, 712.64, 617.20, 806.95, 486.74, 804.20);
-ctx.bezierCurveTo(284.75, 795.72, 150.46, 622.18, 180.17, 444.61);
-ctx.bezierCurveTo(205.33, 276.19, 347.03, 177.56, 489.39, 177.15);
-ctx.closePath();
+                <button class="show-code-btn" onclick="toggleCode(this)">Show IMG code</button>
+                <div class="code-reveal">
+<pre>
+<span class="tag">&lt;img</span> 
+  <span class="attr">src</span>=<span class="str">"mercedes.png"</span> 
+  <span class="attr">alt</span>=<span class="str">"Mercedes Raster"</span>
+<span class="tag">/&gt;</span>
+</pre>
+                </div>
+            </div>
+        </div>
+    </section>
 
-/* DESNI KRAK*/
-ctx.moveTo(749.03, 634.06);
-ctx.lineTo(533.02, 465.99);
-ctx.lineTo(495.00, 195.01);
-ctx.bezierCurveTo(747.10, 206.39, 846.72, 464.97, 749.04, 634.06);
-ctx.closePath();
+    <section class="section-padding reveal" style="background: #0a0a0a; border-top: 1px solid #1a1a1a;">
+        <div class="text-center">
+            <h2>The Clarity Threshold</h2>
+            <p>Interact to compare the infinite sharpness of Vectors against the limits of the Raster PNG file.</p>
+        </div>
 
-/*SPODNJI KRAK */
-ctx.moveTo(745.01, 641.02);
-ctx.bezierCurveTo(645.15, 817.83, 365.52, 854.05, 236.03, 642.04);
-ctx.lineTo(490.45, 538.00);
-ctx.lineTo(745.01, 641.01);
-ctx.closePath();
+        <div class="slider-wrapper" id="splitView" style="--pos: 50%;">
+            
+            <div class="layer layer-bottom">
+                <img src="images/mercedes.png" alt="Raster Version" style="width: 600px; height: auto; max-width: 100%; transform: scale(1.0);"> 
+                <span class="split-label lbl-left">Raster (PNG File)</span>
+            </div>
 
-/* LEVi KRAK*/
-ctx.moveTo(232.98, 635.98);
-ctx.lineTo(446.58, 462.63);
-ctx.lineTo(485.95, 194.98);
-ctx.bezierCurveTo(388.82, 194.26, 288.72, 248.55, 236.33, 338.44);
-ctx.bezierCurveTo(170.00, 442.01, 192.34, 575.29, 232.98, 635.98);
-ctx.closePath();
+            <div class="layer layer-top">
+                <svg style="transform: scale(1.0); width: 600px; height: auto; max-width: 100%;" viewBox="0 0 980 980"> 
+                    <path fill="#fff" fill-rule="evenodd" d="M 489.39,177.15 C 658.26,170.76 819.34,324.04 802.99,518.39 781.96,712.64 617.20,806.95 486.74,804.20 284.75,795.72 150.46,622.18 180.17,444.61 205.33,276.19 347.03,177.56 489.39,177.15 Z M 749.03,634.06 C 749.03,634.06 533.02,465.99 533.02,465.99 533.02,465.99 533.01,465.99 533.01,465.99 533.01,465.99 495.00,195.03 495.00,195.03 495.00,195.03 495.00,195.01 495.00,195.01 747.10,206.39 846.72,464.97 749.04,634.06 Z M 745.01,641.02 C 645.15,817.83 365.52,854.05 236.03,642.04 236.03,642.04 236.06,641.99 236.06,641.99 236.06,641.99 490.45,538.00 490.45,538.00 490.45,538.00 490.45,538.01 490.45,538.01 490.45,538.01 745.01,641.01 745.01,641.01 Z M 232.98,635.98 C 232.98,635.98 446.58,462.63 446.58,462.63 446.58,462.63 485.95,194.98 485.95,194.98 388.82,194.26 288.72,248.55 236.33,338.44 170.00,442.01 192.34,575.29 232.98,635.98 Z" />
+                </svg>
+                <span class="split-label lbl-right">Vector (Sharp)</span>
+            </div>
 
-ctx.fillStyle = "black";
-ctx.strokeStyle = "black";
-ctx.fill("evenodd");
-ctx.stroke();
-</script>
+            <div class="handle-line"></div>
+            <div class="handle-circle">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="white"><path d="M16 4l-1.41 1.41L18.17 9H3v2h15.17l-3.59 3.59L16 16l6-6-6-6z"/></svg>
+            </div>
+        </div>
+    </section>
 
+    <section class="showroom">
+        <div class="text-center reveal">
+            <h2>The Collection</h2>
+            <p>Masterpieces of engineering.</p>
+        </div>
+        <div class="car-grid">
+            <div class="car-card reveal">
+                <img loading="lazy" src="https://autofilter.sk/assets/files/_transforms/e-kombi/_carImage5/Mercedes-benz-e-class-estate-2023-10-galeria_2025-04-10-210404_ercs.jpg" alt="Mercedes S Class">
+                <div class="car-overlay">
+                    <h3>E-Class</h3>
+                </div>
+            </div>
+            <div class="car-card reveal">
+                <img loading="lazy" src="https://www.topgear.com/sites/default/files/images/news-article/2018/02/172fac6209645a4ca455b5fd020e7384/17c833_009.jpg" alt="Mercedes AMG GT">
+                <div class="car-overlay">
+                    <h3>A-Class</h3>
+                </div>
+            </div>
+            <div class="car-card reveal">
+                <img loading="lazy" src="https://images.prismic.io/carwow/d7d113bc-6570-4db2-aa5c-0fbbecb43e90_2021+Mercedes+G-Class+front+quarter+moving+2.jpg" alt="Mercedes G Class">
+                <div class="car-overlay">
+                    <h3>G-Class</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p> &copy; 2026 Designed for Digital Quality Demonstration.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
 </body>
 </html>
-
