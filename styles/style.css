@@ -1,0 +1,340 @@
+/* --- 1. GLOBAL LUXURY STYLES --- */
+:root {
+    --bg-color: #050505;
+    --text-main: #f0f0f0;
+    --accent: #fff;
+    --spacing: 100px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    font-family: 'Roboto', sans-serif;
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+h1, h2, h3 { font-family: 'Playfair Display', serif; font-weight: 400; }
+
+/* --- HERO SECTION --- */
+.hero {
+    height: 100vh;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.4), #050505), 
+                url('https://cdn.motor1.com/images/mgl/LZYyW/s3/2021-mercedes-benz-s-class-feature.jpg') center/cover no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+
+/* HEADER LOGO STYLES */
+.top-logo-link {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    width: 60px;
+    height: 60px;
+    z-index: 1000;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: block;
+}
+
+.top-logo-link svg {
+    width: 100%;
+    height: 100%;
+    filter: drop-shadow(0 2px 5px rgba(0,0,0,0.5));
+}
+
+.top-logo-link:hover { transform: scale(1.2); }
+
+.hero h1 {
+    font-size: 5rem;
+    letter-spacing: 5px;
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: fadeUp 1s forwards 0.5s;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    opacity: 0;
+    animation: fadeUp 1s forwards 0.8s;
+}
+
+/* --- COMPARISON SECTION --- */
+.section-padding { padding: var(--spacing) 20px; }
+.text-center { text-align: center; margin-bottom: 60px; }
+.text-center h2 { font-size: 3rem; margin-bottom: 15px; }
+.text-center p { color: #888; max-width: 600px; margin: 0 auto; }
+
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+    border-top: 1px solid #222;
+    padding-top: 60px;
+    align-items: start;
+}
+
+.tech-card {
+    background: #0a0a0a;
+    padding: 30px;
+    transition: all 0.4s ease;
+    border: 1px solid #1a1a1a;
+    display: flex;
+    flex-direction: column;
+}
+
+.tech-card:hover { border-color: #444; transform: translateY(-5px); }
+
+.visual-stage {
+    height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+    background: #000;
+    overflow: hidden;
+}
+
+.visual-stage img, .visual-stage svg, .visual-stage canvas {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+/* CODE REVEAL BUTTONS */
+.show-code-btn {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #444;
+    color: #888;
+    padding: 10px 0;
+    margin-top: 20px;
+    cursor: pointer;
+    text-align: left;
+    font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.8rem;
+    transition: 0.3s;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.show-code-btn:hover { color: #fff; border-color: #fff; }
+.show-code-btn::after { content: '▼'; font-size: 0.7rem; transition: transform 0.3s; }
+.show-code-btn.active::after { transform: rotate(180deg); }
+
+.code-reveal {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out;
+    background: #000;
+    margin-top: 0;
+}
+
+.code-reveal pre {
+    padding: 20px;
+    font-size: 0.75rem;
+    color: #ccc;
+    overflow-x: auto;
+    border-left: 2px solid #333;
+    margin: 10px 0;
+    font-family: 'Courier New', monospace;
+}
+
+.kw { color: #c678dd; } .fn { color: #61afef; } .num { color: #d19a66; } .tag { color: #e06c75; } .attr { color: #d19a66; } .str { color: #98c379; }
+
+/* SLIDER CSS */
+.slider-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    aspect-ratio: 1/1;
+    margin: 60px auto;
+    background: #050505;
+    overflow: hidden;
+    cursor: ew-resize;
+    border: 1px solid #222;
+}
+
+.layer {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    display: flex; justify-content: center; align-items: center;
+}
+
+.layer-top {
+    background: #000;
+    z-index: 2;
+    clip-path: polygon(var(--pos, 50%) 0, 100% 0, 100% 100%, var(--pos, 50%) 100%);
+}
+
+.layer-bottom { z-index: 1; }
+
+.handle-line {
+    position: absolute; top: 0; bottom: 0; left: var(--pos, 50%);
+    width: 1px; background: rgba(255,255,255,0.5); z-index: 10; pointer-events: none;
+}
+
+.handle-circle {
+    position: absolute; top: 50%; left: var(--pos, 50%);
+    transform: translate(-50%, -50%); width: 40px; height: 40px;
+    border: 1px solid rgba(255,255,255,0.8); border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    z-index: 11; background: rgba(0,0,0,0.5); backdrop-filter: blur(5px);
+}
+
+.split-label {
+    position: absolute; bottom: 20px; font-size: 0.7rem; 
+    text-transform: uppercase; letter-spacing: 2px; color: #fff;
+}
+.lbl-left { left: 30px; color: #666; }
+.lbl-right { right: 30px; }
+
+/* --- CAR SHOWCASE --- */
+.showroom { padding: var(--spacing) 20px; }
+.car-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 30px;
+    max-width: 1400px; margin: 0 auto;
+}
+.car-card { position: relative; height: 500px; overflow: hidden; }
+
+/* OPTIMIZACIJA SLIK IN TRANZICIJ */
+.car-card img { 
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+    transition: transform 0.6s ease; 
+    /* Prepreči "jitter" pri hoverju */
+    backface-visibility: hidden; 
+    transform: translateZ(0); 
+}
+
+.car-card:hover img { transform: scale(1.05); }
+.car-overlay {
+    position: absolute; bottom: 0; left: 0; width: 100%; padding: 40px;
+    background: linear-gradient(to top, #000, transparent);
+}
+
+/* --- ANIMATIONS --- */
+@keyframes fadeUp {
+    to { opacity: 1; transform: translateY(0); }
+    from { opacity: 0; transform: translateY(50px); }
+}
+
+/* OPTIMIZIRAN REVEAL */
+.reveal { 
+    opacity: 0; 
+    transform: translateY(30px); /* Manjši premik je lažji za oko */
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    will-change: opacity, transform; /* Sporoči GPU naj se pripravi */
+}
+.reveal.active { opacity: 1; transform: translateY(0); }
+
+/* ZAMIK ZA AVTOMOBILE (STAGGER EFFECT) */
+/* To prepreči, da bi se vsi trije naložili hkrati in zablokirali scroll */
+.car-card.reveal:nth-child(2) { transition-delay: 0.1s; }
+.car-card.reveal:nth-child(3) { transition-delay: 0.2s; }
+
+footer { padding: 50px; text-align: center; border-top: 1px solid #222; color: #555; font-size: 0.8rem; margin-top: 50px;}
+
+
+/* --- WARNING MODAL STYLES --- */
+.warning-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.98); /* Near total black for focus */
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(15px);
+}
+
+.warning-box {
+    background-color: #000;
+    border: 5px solid #ff0000; /* Bright Red Border */
+    width: 90%;
+    max-width: 600px;
+    box-shadow: 0 0 60px rgba(255, 0, 0, 0.6);
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    overflow: hidden;
+    animation: modalPulse 0.3s ease-out;
+}
+
+.warning-header {
+    background-color: #ff0000;
+    color: #fff;
+    font-weight: 900;
+    font-size: 1.4rem;
+    padding: 15px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.warning-content {
+    padding: 40px;
+    color: #fff;
+}
+
+.warning-content h2 {
+    font-family: 'Playfair Display', serif;
+    color: #ff0000; /* Red Title */
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.warning-alert {
+    background-color: #1a0000;
+    border: 2px dashed #ff0000;
+    padding: 20px;
+    margin: 25px 0;
+    color: #ff4444;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.small-print {
+    font-size: 0.75rem !important;
+    color: #888 !important;
+    margin-bottom: 30px;
+    line-height: 1.4;
+}
+
+#accept-warning-btn {
+    background-color: #ff0000;
+    color: #fff;
+    border: none;
+    padding: 18px 45px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    letter-spacing: 1px;
+}
+
+#accept-warning-btn:hover {
+    background-color: #fff;
+    color: #ff0000;
+    transform: scale(1.05);
+}
+
+@keyframes modalPulse {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
