@@ -4,7 +4,7 @@ This project is a technical demonstration of different web rendering technologie
 
 ## Live Demo
 
-You can view the live project here: [Mercedes-Benz Demo](https://github.com/himzo7/Mercedes-Logo-Bezier) (hosted on GitHub Pages).
+You can view the live project here: [Mercedes-Benz Demo](https://himzo7.github.io/Mercedes-Logo-Bezier/) (hosted on GitHub Pages).
 *Note: Ensure you have a modern browser for the best experience with smooth scroll animations and the interactive comparison slider.*
 
 ## Features
