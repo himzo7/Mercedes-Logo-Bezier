@@ -54,34 +54,43 @@ document.addEventListener('DOMContentLoaded', function() {
     // --- 4. CANVAS LOGIC ---
     (function drawMercedesLogo() {
         const canvas = document.getElementById("mercedesCanvas");
-        if(!canvas) return; 
+        if (!canvas) return;
         const ctx = canvas.getContext("2d");
-        const scaleFactor = 200 / 980; 
-
+        const scaleFactor = 200 / 980;
+    
         ctx.scale(scaleFactor, scaleFactor);
         ctx.beginPath();
+    
+        // Krog    
         ctx.moveTo(489.39, 177.15);
         ctx.bezierCurveTo(658.26, 170.76, 819.34, 324.04, 802.99, 518.39);
         ctx.bezierCurveTo(781.96, 712.64, 617.20, 806.95, 486.74, 804.20);
         ctx.bezierCurveTo(284.75, 795.72, 150.46, 622.18, 180.17, 444.61);
         ctx.bezierCurveTo(205.33, 276.19, 347.03, 177.56, 489.39, 177.15);
         ctx.closePath();
+    
+        //  Desni krak
         ctx.moveTo(749.03, 634.06);
-        ctx.lineTo(533.02, 465.99);
-        ctx.lineTo(495.00, 195.01);
+        ctx.bezierCurveTo(749.03, 634.06, 533.02, 465.99, 533.02, 465.99);
+        ctx.bezierCurveTo(533.02, 465.99, 495.00, 195.01, 495.00, 195.01);
         ctx.bezierCurveTo(747.10, 206.39, 846.72, 464.97, 749.04, 634.06);
         ctx.closePath();
+    
+        // Spodnji krak
         ctx.moveTo(745.01, 641.02);
         ctx.bezierCurveTo(645.15, 817.83, 365.52, 854.05, 236.03, 642.04);
-        ctx.lineTo(490.45, 538.00);
-        ctx.lineTo(745.01, 641.01);
+        ctx.bezierCurveTo(236.03, 642.04, 490.45, 538.00, 490.45, 538.00);
+        ctx.bezierCurveTo(490.45, 538.00, 745.01, 641.01, 745.01, 641.01);
         ctx.closePath();
+    
+        // Levi krak
         ctx.moveTo(232.98, 635.98);
-        ctx.lineTo(446.58, 462.63);
-        ctx.lineTo(485.95, 194.98);
+        ctx.bezierCurveTo(232.98, 635.98, 446.58, 462.63, 446.58, 462.63);
+        ctx.bezierCurveTo(446.58, 462.63, 485.95, 194.98, 485.95, 194.98);
         ctx.bezierCurveTo(388.82, 194.26, 288.72, 248.55, 236.33, 338.44);
         ctx.bezierCurveTo(170.00, 442.01, 192.34, 575.29, 232.98, 635.98);
         ctx.closePath();
+    
         ctx.fillStyle = "white";
         ctx.fill("evenodd");
     })();
@@ -101,4 +110,5 @@ document.addEventListener('DOMContentLoaded', function() {
             e.preventDefault(); 
         });
     }
+
 });
