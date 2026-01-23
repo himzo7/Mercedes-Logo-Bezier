@@ -1,4 +1,4 @@
-<h1 align="center"> Mercedes-Benz Logo | SVG vs. Canvas vs. PNG</h1>
+<h1 align="center"> Mercedes-Benz Logo | SVG vs. BezierCurveTo vs. PNG</h1>
 
 This project is a technical demonstration of different web rendering technologies using the iconic Mercedes-Benz identity. It explores the practical differences between SVG (Scalable Vector Graphics), HTML5 Canvas, and traditional Raster PNG images, focusing on clarity, scalability, and performance optimization.
 
